@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | Botswana Association of the Deaf</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #253247;
+      line-height: 1.6;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 12px 6%;
+      background: #fff;
+      box-shadow: 0 2px 12px #102b5718;
+    }
+
+    .logo img {
+      display: block;
+      width: 68px;
+      height: 68px;
+      object-fit: contain;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #102b57;
+      font-weight: 700;
+      line-height: 1.25;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border-radius: 50%;
+      background: #2457a7;
+      color: #fff;
+      font-size: 0.8rem;
+    }
+
+    .site-header nav,
+    .site-footer nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .site-header nav a,
+    .site-footer nav a {
+      color: #102b57;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .site-header nav a:hover,
+    .site-header nav a.active,
+    .site-footer nav a:hover {
+      color: #2457a7;
+    }
+
+    .contact-main {
+      width: min(100% - 40px, 800px);
+      margin: 0 auto;
+      padding: 60px 0 70px;
+    }
+
+    .contact-main h1 {
+      margin: 0 0 12px;
+      color: #102b57;
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .contact-intro {
+      margin: 0 0 30px;
+      color: #596579;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-form label {
+      margin-top: 8px;
+      color: #102b57;
+      font-weight: 700;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #cbd3df;
+      border-radius: 6px;
+      background: #fff;
+      color: #253247;
+      font: inherit;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #2457a7;
+      outline: 3px solid #2457a722;
+    }
+
+    .contact-form textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      align-self: flex-start;
+      margin-top: 12px;
+      padding: 12px 22px;
+      border: 0;
+      border-radius: 6px;
+      background: #f7b500;
+      color: #102b57;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background: #e5a600;
+    }
+
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 28px 6%;
+      background: #f4f7fb;
+    }
+
+    .brand-footer .brand-mark {
+      background: #102b57;
+    }
+
+    @media (max-width: 900px) {
+      .site-header {
+        flex-wrap: wrap;
+      }
+
+      .site-header nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .site-footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .site-footer nav {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .site-header {
+        gap: 12px;
+        padding: 10px 5%;
+      }
+
+      .logo img {
+        width: 54px;
+        height: 54px;
+      }
+
+      .brand {
+        font-size: 0.9rem;
+      }
+
+      .site-header nav {
+        justify-content: flex-start;
+        gap: 12px 18px;
+      }
+
+      .contact-main {
+        width: min(100% - 32px, 800px);
+        padding: 42px 0 55px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="BOAD home">
+      <img src="SHIRLEY LOGO.jpeg" alt="Botswana Association of the Deaf logo">
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="About%20us.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a class="active" href="contact.html" aria-current="page">Contact Us</a>
+    </nav>
+  </header>
+
+  <main class="contact-main">
+    <h1>Contact Us</h1>
+    <p class="contact-intro">
+      We would love to hear from you. Get in touch with us for support,
+      inquiries or partnership opportunities.
+    </p>
+
+    <form class="contact-form" action="#" method="post">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        autocomplete="name"
+        required
+      >
+
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        autocomplete="email"
+        required
+      >
+
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="6"
+        required
+      ></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand brand-footer" href="index.html">
+    </a>
+
+    <nav aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="About%20us.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </footer>
+</body>
+</html>

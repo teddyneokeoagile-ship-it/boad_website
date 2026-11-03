@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio | Botswana Association of the Deaf</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #253247;
+      line-height: 1.6;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 12px 6%;
+      background: #fff;
+      box-shadow: 0 2px 12px #102b5718;
+    }
+
+    .logo img {
+      display: block;
+      width: 68px;
+      height: 68px;
+      object-fit: contain;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #102b57;
+      font-weight: 700;
+      line-height: 1.25;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border-radius: 50%;
+      background: #2457a7;
+      color: #fff;
+      font-size: 0.8rem;
+    }
+
+    .site-header nav,
+    .site-footer nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .site-header nav a,
+    .site-footer nav a {
+      color: #102b57;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .site-header nav a:hover,
+    .site-header nav a.active,
+    .site-footer nav a:hover {
+      color: #2457a7;
+    }
+
+    .hero-portfolio {
+      min-height: 330px;
+      display: flex;
+      align-items: center;
+      padding: 60px 8%;
+      color: #fff;
+      background: linear-gradient(100deg, #102b57, #456a9f);
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .hero-content h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1.1;
+    }
+
+    .hero-content p {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .section {
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 65px 6%;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 0 auto 36px;
+      color: #596579;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .project {
+      overflow: hidden;
+      margin: 0;
+      border: 1px solid #e5eaf1;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 8px 24px #102b570c;
+    }
+
+    .project img {
+      display: block;
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .project figcaption {
+      padding: 18px 20px;
+      color: #102b57;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 28px 6%;
+      background: #f4f7fb;
+    }
+
+    .brand-footer .brand-mark {
+      background: #102b57;
+    }
+
+    @media (max-width: 900px) {
+      .site-header {
+        flex-wrap: wrap;
+      }
+
+      .site-header nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .site-footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .site-footer nav {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .site-header {
+        gap: 12px;
+        padding: 10px 5%;
+      }
+
+      .logo img {
+        width: 54px;
+        height: 54px;
+      }
+
+      .brand {
+        font-size: 0.9rem;
+      }
+
+      .site-header nav {
+        justify-content: flex-start;
+        gap: 12px 18px;
+      }
+
+      .hero-portfolio {
+        min-height: 270px;
+        padding: 45px 7%;
+      }
+
+      .section {
+        padding: 48px 6%;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project img {
+        height: 210px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="BOAD home">
+      <img src="SHIRLEY LOGO.jpeg" alt="Botswana Association of the Deaf logo">
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="About%20us.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a class="active" href="portfolio.html" aria-current="page">Portfolio</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-portfolio">
+      <div class="hero-content">
+        <h1>Our Work</h1>
+        <p>Projects and activities supporting Deaf inclusion across Botswana.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="intro">
+        Explore some of BOAD’s community activities, learning initiatives and
+        advocacy work. Each project helps promote accessibility, participation
+        and opportunity for Deaf people.
+      </p>
+
+      <div class="project-grid">
+        <figure class="project">
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
+            alt="Laptop displaying a website"
+            loading="lazy"
+          >
+          <figcaption>Accessible Digital Information</figcaption>
+        </figure>
+
+        <figure class="project">
+          <img
+            src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=900&q=80"
+            alt="Printed design materials arranged on a table"
+            loading="lazy"
+          >
+          <figcaption>Community Awareness Materials</figcaption>
+        </figure>
+
+        <figure class="project">
+          <img
+            src="../boad_website/images/photo.png"
+            alt="Smartphone displaying a mobile application"
+            loading="lazy"
+          >
+          <figcaption>Digital Access Initiatives</figcaption>
+        </figure>
+
+        <figure class="project">
+          <img
+            src="../boad_website/images/photo .jpeg"
+            alt="Participants sharing ideas during a workshop"
+            loading="lazy"
+          >
+          <figcaption>Inclusive Skills Workshops</figcaption>
+        </figure>
+
+        <figure class="project">
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80"
+            alt="Person working at a computer"
+            loading="lazy"
+          >
+          <figcaption>Digital Learning Resources</figcaption>
+        </figure>
+
+        <figure class="project">
+          <img
+            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80"
+            alt="Speaker presenting at a community event"
+            loading="lazy"
+          >
+          <figcaption>Community Outreach Events</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+  
+
+    <nav aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="About%20us.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </footer>
+</body>
+</html>
