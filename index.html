@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Botswana Association of the Deaf | Home</title>
+
+  <style>
+    :root {
+      --navy: #102b57;
+      --blue: #2457a7;
+      --yellow: #ffd34e;
+      --text: #253247;
+      --muted: #596579;
+      --light: #f4f7fb;
+      --white: #fff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 12px 6%;
+      background: var(--white);
+      box-shadow: 0 2px 12px #102b5718;
+    }
+
+    .logo img {
+      display: block;
+      width: 68px;
+      height: 68px;
+      object-fit: contain;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: var(--blue);
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform .2s, background .2s;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+
+    .button-yellow {
+      background: var(--yellow);
+      color: var(--navy);
+    }
+
+    .button-blue {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .menu-toggle {
+      display: none;
+      padding: 8px 12px;
+      border: 1px solid #d5dce7;
+      border-radius: 5px;
+      background: white;
+      color: var(--navy);
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 540px;
+      display: flex;
+      align-items: center;
+      padding: 70px 8%;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(16,43,87,.88), rgba(16,43,87,.55) 55%, rgba(16,43,87,.12)),
+        url("images/photo%201.png") center/cover no-repeat;
+    }
+
+    .hero-content { max-width: 680px; }
+
+    .eyebrow {
+      color: var(--yellow);
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 12px 0;
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      line-height: 1.08;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin-bottom: 28px;
+      font-size: 1.1rem;
+    }
+
+    .section {
+      padding: 72px 7%;
+      scroll-margin-top: 100px;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin: 0 auto 36px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+    }
+
+    .section-heading p { color: var(--muted); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .service-card {
+      min-width: 0;
+      padding: 26px;
+      border: 1px solid #e5eaf1;
+      border-radius: 10px;
+      background: var(--white);
+      box-shadow: 0 8px 24px #102b570c;
+    }
+
+    /* Image frame keeps the image box consistent */
+    .service-image {
+      width: 100%;
+      height: 220px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #f4f6f9;
+    }
+
+    /* Show the entire image without cropping */
+    .service-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .service-card h3 {
+      margin-top: 0;
+      color: var(--navy);
+    }
+
+    .service-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 48px;
+      background: var(--light);
+    }
+
+    .about-image {
+      width: 100%;
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #e9eef5;
+    }
+
+    .about-image img {
+      display: block;
+      width: 100%;
+      height: 420px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .about-content h2 {
+      margin-top: 0;
+      color: var(--navy);
+      font-size: 2.4rem;
+    }
+
+    .about-content p { color: var(--muted); }
+
+    .contact-banner {
+      padding: 55px 7%;
+      text-align: center;
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .contact-banner h2 { margin-top: 0; }
+
+    footer {
+      padding: 22px 7%;
+      text-align: center;
+      color: #dce5f2;
+      background: #0b1e3c;
+    }
+
+    @media (max-width: 800px) {
+      .header { flex-wrap: wrap; }
+      .menu-toggle { display: block; }
+      .header-actions { margin-left: auto; }
+
+      .main-nav {
+        display: none;
+        order: 3;
+        width: 100%;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+        padding: 12px 0;
+      }
+
+      .main-nav.open { display: flex; }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 520px) {
+      .header {
+        gap: 12px;
+        padding: 10px 5%;
+      }
+
+      .logo img {
+        width: 54px;
+        height: 54px;
+      }
+
+      .header-actions .button {
+        padding: 10px 12px;
+        font-size: .9rem;
+      }
+
+      .hero {
+        min-height: 470px;
+        padding: 55px 7%;
+      }
+
+      .services-grid { grid-template-columns: 1fr; }
+
+      .service-image { height: 240px; }
+
+      .section { padding: 54px 6%; }
+
+      .about-image img { height: 300px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <a class="logo" href="index.html" aria-label="BOAD home">
+      <img src="SHIRLEY%20LOGO.jpeg" alt="Botswana Association of the Deaf logo">
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false"
+      aria-controls="main-nav" onclick="toggleMenu()">
+      Menu
+    </button>
+
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="About%20us.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="button button-yellow" href="contact.html">Get in Touch</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">Botswana Association of the Deaf</span>
+        <h1>Empowering Deaf Communities for a Brighter Future</h1>
+        <p>
+          The Botswana Association Of The Deaf (BOAD) is committed to promoting inclusion,accessibility and equal opportunities for deaf people in Botswana.
+        </p>
+        <a class="button button-yellow" href="#about">Learn About BOAD &rarr;</a>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-heading">
+        <h2>What We Do</h2>
+        <p>We work with Deaf people, families and communities to build a more inclusive Botswana.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-image">
+            <img src="images/photo%202.png" alt="Hands communicating using sign language">
+          </div>
+          <h3>Sign Language Support</h3>
+          <p>Promoting communication and connection through sign language.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-image">
+            <img src="./images/alphabets.png" alt="A hand demonstrating a sign language gesture">
+          </div>
+          <h3>Education &amp; Training</h3>
+          <p>Building skills for independence, learning and opportunity.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-image">
+            <img src="images/photo%205.png" alt="Deaf professional demonstrating sign language">
+          </div>
+          <h3>Employment Support</h3>
+          <p>Creating pathways to meaningful employment.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-image">
+            <img src="images/photo%206.png" alt="BOAD representative communicating in sign language">
+          </div>
+          <h3>Advocacy &amp; Awareness</h3>
+          <p>Championing rights and inclusion for a stronger community.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-image">
+            <img src="images/photo%207.png" alt="Members of the Deaf community together">
+          </div>
+          <h3>Community Inclusion</h3>
+          <p>Encouraging accessible spaces and participation for all.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-image">
+            <img src="images/photo%203.png" alt="Hearing devices and accessibility technology">
+          </div>
+          <h3>Partnerships</h3>
+          <p>Working together for a more inclusive Botswana.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="about-image">
+        <img src="images/photo%2010.png" alt="Hands communicating in sign language">
+      </div>
+
+      <div class="about-content">
+        <h2>About BOAD</h2>
+        <p>
+          The Botswana Association of the Deaf is dedicated to empowering
+          Deaf individuals through education, advocacy, training and community
+          support. We work towards a society where everyone can participate
+          and access equal opportunities.
+        </p>
+        <a class="button button-blue" href="About%20us.html">More About Us &rarr;</a>
+      </div>
+    </section>
+
+    <section class="contact-banner" id="contact">
+      <h2>Let’s build a more inclusive Botswana together.</h2>
+      <p>Contact BOAD to learn more, get support or explore ways to work together.</p>
+      <a class="button button-yellow" href="contact.html">Contact Us</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Botswana Association of the Deaf. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("main-nav");
+      const button = document.querySelector(".menu-toggle");
+      const isOpen = nav.classList.toggle("open");
+      button.setAttribute("aria-expanded", isOpen);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services | Botswana Association of the Deaf</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #253247;
+      line-height: 1.6;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 12px 6%;
+      background: #fff;
+      box-shadow: 0 2px 12px #102b5718;
+    }
+
+    .logo img {
+      display: block;
+      width: 68px;
+      height: 68px;
+      object-fit: contain;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #102b57;
+      font-weight: 700;
+      line-height: 1.25;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border-radius: 50%;
+      background: #2457a7;
+      color: #fff;
+      font-size: 0.8rem;
+    }
+
+    .site-header nav,
+    .site-footer nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .site-header nav a,
+    .site-footer nav a {
+      color: #102b57;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .site-header nav a:hover,
+    .site-header nav a.active,
+    .site-footer nav a:hover {
+      color: #2457a7;
+    }
+
+    .hero-services {
+      min-height: 330px;
+      display: flex;
+      align-items: center;
+      padding: 60px 8%;
+      color: #fff;
+      background:
+        linear-gradient(100deg, rgba(16, 43, 87, .95), rgba(36, 87, 167, .65)),
+        url("signing hands about.png") center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero-content h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.1;
+    }
+
+    .hero-content p {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .section {
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 65px 6%;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 0 auto 36px;
+      color: #596579;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      overflow: hidden;
+      border: 1px solid #e5eaf1;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 8px 24px #102b570c;
+    }
+
+    .card img {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 22px;
+    }
+
+    .card-body h2 {
+      margin: 0 0 8px;
+      color: #102b57;
+      font-size: 1.3rem;
+    }
+
+    .card-body p {
+      margin: 0;
+      color: #596579;
+    }
+
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 28px 6%;
+      background: #f4f7fb;
+    }
+
+    .brand-footer .brand-mark {
+      background: #102b57;
+    }
+
+    @media (max-width: 900px) {
+      .site-header {
+        flex-wrap: wrap;
+      }
+
+      .site-header nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .site-footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .site-footer nav {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .site-header {
+        gap: 12px;
+        padding: 10px 5%;
+      }
+
+      .logo img {
+        width: 54px;
+        height: 54px;
+      }
+
+      .brand {
+        font-size: 0.9rem;
+      }
+
+      .site-header nav {
+        justify-content: flex-start;
+        gap: 12px 18px;
+      }
+
+      .hero-services {
+        min-height: 270px;
+        padding: 45px 7%;
+      }
+
+      .section {
+        padding: 48px 6%;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card img {
+        height: 210px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label=" home">
+      <img src="SHIRLEY LOGO.jpeg" alt="Botswana Association of the Deaf logo">
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="About%20us.html">About Us</a>
+      <a class="active" href="services.html" aria-current="page">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-services">
+      <div class="hero-content">
+        <h1>Our Services</h1>
+        <p>Support, access and opportunities for Deaf people in Botswana.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="intro">
+        BOAD works with Deaf people, families and communities to promote
+        communication, inclusion and equal opportunities. Explore some of
+        the support and services we provide.
+      </p>
+
+      <div class="card-grid">
+        <article class="card">
+          <img
+            src="./images/photo 2.png"
+            alt="People communicating during a group session"
+          >
+          <div class="card-body">
+            <h2>Sign Language Support</h2>
+            <p>Sign language learning and communication support to help people connect and participate.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="./images/NEO.png"
+            alt="Community members spending time together"
+          >
+          <div class="card-body">
+            <h2>Community Support</h2>
+            <p>Peer support, outreach and community activities that encourage connection and belonging.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="./images/photo 10.png"
+            alt="A team taking part in a training session"
+          >
+          <div class="card-body">
+            <h2>Education &amp; Training</h2>
+            <p>Skills development and learning opportunities that support personal and professional growth.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="./images/photo 8.png"
+            alt="People gathering in a community space"
+          >
+          <div class="card-body">
+            <h2>Accessibility Advocacy</h2>
+            <p>Promoting accessible services, facilities and communication in the wider community.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="./images/advocacy.png"
+            alt="People sharing information at a workshop"
+          >
+          <div class="card-body">
+            <h2>Advocacy &amp; Awareness</h2>
+            <p>Raising awareness of Deaf rights and encouraging equal participation and inclusion.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="./images/photo 1.png"
+            alt="People talking together in a supportive setting"
+          >
+          <div class="card-body">
+            <h2>Guidance &amp; Referrals</h2>
+            <p>Connecting individuals and families with relevant information, support and services.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand brand-footer" href="index.html">
+     
+    </a>
+  </footer>
+</body>
+</html>
